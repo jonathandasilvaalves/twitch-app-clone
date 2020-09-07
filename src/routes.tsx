@@ -52,7 +52,7 @@ const Routes: React.FC = () => (
         tabBarIcon: ({ size, focused}) => {
           return (
             <MaterialCommunityIcons 
-              name="compass-outlin"
+              name="compass-outline"
               size={size}
               color={focused ? colors.purple : colors.black}
             />
