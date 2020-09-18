@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import colors from '../../styles/colors';
 
 export const List = styled.ScrollView.attrs({
     horizontal: true,
@@ -16,7 +15,7 @@ export const CategoryImage = styled.Image`
 export const CategoryName = styled.Text`
     margin-top: 5px;
     max-width: 98px;
-    color: ${colors.black};
+    color: ${props => props.theme.black};
     font-family: roboto_700;
     font-size:  13.5px;
 `;
@@ -25,7 +24,7 @@ export const CategoryStatus = styled.View`
     align-items: center;
 `;
 export const RedCircle = styled.View`
-    background: ${colors.red};
+    background: ${props => props.theme.red};
     height: 9px;
     width: 9px;
     border-radius: 4.5px;
@@ -33,6 +32,6 @@ export const RedCircle = styled.View`
 export const Info = styled.Text`
     margin-left: 4px;
     padding-bottom: 1px;
-    color: ${colors.gray};
+    color: ${props => props.theme.gray};
     font-family: roboto_500;
 `;

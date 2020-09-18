@@ -1,16 +1,14 @@
 import React from 'react';
-import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 import Comingsoon from './pages/Comingsoon';
 import Following from './pages/Following';
-import colors from './styles/colors';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
-const Routes: React.FC = () => (
+const Routes: React.FC = ({ colors, teste }) => (
   <NavigationContainer>
     <Navigator
       tabBarOptions={{
@@ -37,7 +35,7 @@ const Routes: React.FC = () => (
         activeTintColor: colors.purple,
       }}
     >
-      <Screen name="Following" component={Following} options={{
+      <Screen name={"Following"} component={Following} options={{
         tabBarIcon: ({ size, focused}) => {
           return (
             <Ionicons 

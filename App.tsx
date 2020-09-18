@@ -7,10 +7,19 @@ import {
   Roboto_700Bold,
   useFonts,
 } from '@expo-google-fonts/roboto';
+import { ThemeProvider } from 'styled-components';
+import { useColorScheme } from 'react-native-appearance';
 
 import Routes from './src/routes';
 
+import themes from './src/themes';
+
+
 export default function App() {
+  const colorScheme = useColorScheme();
+
+  const theme = themes[colorScheme] || themes.dark;
+
   let [fontsLoaded] = useFonts({
     roboto_400: Roboto_400Regular,
     roboto_500: Roboto_500Medium,
@@ -21,10 +30,11 @@ export default function App() {
     return <AppLoading />;
   }
 
+
   return (
-    <>
-      <Routes />
+    <ThemeProvider theme={theme}>
+      <Routes colors={theme}/>
       <StatusBar style="light" />
-    </>
+    </ThemeProvider>
   );
 }
